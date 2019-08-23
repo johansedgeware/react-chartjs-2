@@ -206,7 +206,7 @@ class ChartComponent extends React.Component {
       const current =
         currentDatasetsIndexed[this.props.datasetKeyProvider(next)];
 
-      if (current && current.type === next.type) {
+      if (current && current.type === next.type && next.data) {
         // The data array must be edited in place. As chart.js adds listeners to it.
         current.data.splice(next.data.length);
         next.data.forEach((point, pid) => {
